@@ -85,7 +85,6 @@
     }
   });
 
-
   $(function () {
     $('[data-bs-toggle="tooltip"]').tooltip();
   }); //animated js
@@ -107,9 +106,47 @@
     preloader: false,
     fixedContentPos: false
   });
+	
   $('.popup-with-form').magnificPopup({
     type: 'inline',
     preloader: false,
     focus: '#name'
   });
+	
+	$(function() {
+		$('input[name=utm_source]').val(getParameterByName('utm_source'));
+		$('input[name=utm_medium]').val(getParameterByName('utm_medium'));
+		$('input[name=utm_campaign]').val(getParameterByName('utm_campaign'));
+		$('input[name=utm_content]').val(getParameterByName('utm_content'));
+		$('input[name=utm_term]').val(getParameterByName('utm_term'));
+	});
+	
+	// Send form
+	$('.register-form').on('submit', function(e) {
+		e.preventDefault();
+		let $form = $(this);
+		$.ajax('handler.php', {
+			method: 'POST',
+			data: $(this).serialize(),
+			beforeSend: function() {
+				$form.find('button').prop('disabled', true);
+			},
+			success: function() {
+				$form.trigger('reset');
+				alert('Success');
+			},
+			complete: function() {
+				$form.find('button').prop('disabled', false);
+			}
+		});
+	});
+	
+	// Parse the URL
+	function getParameterByName(name) {
+    name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+    var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+        results = regex.exec(location.search);
+    return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+	}
+	
 })();
