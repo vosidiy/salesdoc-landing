@@ -15,6 +15,7 @@
 
     <link rel="stylesheet" href="assets/css/main.css">
     <link rel="stylesheet" href="assets/css/fontawesome.css">
+    <script>(function (a, m, o, c, r, m) { a[m] = { id: "127443", hash: "d8ac54b82a9661c410e422b61aaa4ba5e82303628b3033c2f2eac747f9b05c0c", locale: "ru", inline: false, setMeta: function (p) { this.params = (this.params || []).concat([p]) } }; a[o] = a[o] || function () { (a[o].q = a[o].q || []).push(arguments) }; var d = a.document, s = d.createElement('script'); s.async = true; s.id = m + '_script'; s.src = 'https://gso.amocrm.ru/js/button.js?1644407852'; d.head && d.head.appendChild(s) }(window, 0, 'amoSocialButton', 0, 0, 'amo_social_button'));</script>
 
 </head>
 <body>
@@ -704,19 +705,19 @@
                         <h4 class="mb-4 fw-medium">Заполните форму, чтобы получить доступ</h4>
                         <div class="row gx-3">
                             <div class="col-sm-6 mb-3">
-                                <input type="text" class="form-control" placeholder="Имя">
+                                <input type="text" name="full_name" class="form-control" placeholder="Имя">
                             </div>
                             <div class="col-sm-6 mb-3">
-                                <input type="text" class="form-control" placeholder="Название компании">
+                                <input type="text" name="company_name" class="form-control" placeholder="Название компании">
                             </div>
                             <div class="col-sm-6 mb-3">
-                                <input type="email" class="form-control" placeholder="Email">
+                                <input type="email" name="email" class="form-control" placeholder="Email">
                             </div>
                             <div class="col-sm-6 mb-3">
-                                <input type="tel" class="form-control" placeholder="Телефон">
+                                <input type="tel" name="phone" class="form-control" placeholder="Телефон">
                             </div>
                             <div class="col-12 mb-3">
-                                <textarea class="form-control" placeholder="Комментарий" style="height: 120px"></textarea>
+                                <textarea name="comment" class="form-control" placeholder="Комментарий" style="height: 120px"></textarea>
                             </div>
                             <div class="col-12">
                                 <button type="submit" class="btn btn-success mt-4 w-100">
