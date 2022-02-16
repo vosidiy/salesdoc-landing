@@ -16,7 +16,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 		$contact = $amo->contact;
 		$contact['name'] = trim($_POST['full_name']);
 		$contact['company_name'] = trim($_POST['company_name']);
-		$contact['tags'] = ['test'];
+		$contact['tags'] = trim($_POST['company_name']);
 		$contact->addCustomField('326809', trim($_POST['phone']), 'WORK');
 		$contact->addCustomField('326811', trim($_POST['email']), 'WORK');
 		$contact_id = $contact->apiAdd();
@@ -25,7 +25,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 		$lead = $amo->lead;
 		$lead['name'] = 'New lead';
 		$lead['status_id'] = $status;
-		$lead['tags'] = ['test'];
+		$lead['tags'] = trim($_POST['company_name']);
 		$lead['price'] = 0;
 		$lead->addCustomField('996581', trim($_POST['utm_source']));
 		$lead->addCustomField('996583', trim($_POST['utm_medium']));

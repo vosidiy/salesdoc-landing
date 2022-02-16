@@ -90,34 +90,38 @@
                     <div class="register-wrap p-5 bg-white shadow rounded-custom mt-5 mt-lg-0 mt-xl-0">
                         <h3 class="fw-medium h4">Заполните форму </h3>
 
-                        <form action="#" class="mt-4 register-form">
+                        <form action="https://demo.salesdoc.io/site/login" method="POST" class="register-form mt-4 ">
                             <div class="row gx-2">
                                 <div class="col-sm-6">
                                     <div class="mb-3">
                                         <label class="form-label">Имя*</label>
-                                        <input type="text" name="" class="form-control" placeholder="">
+                                        <input type="text" name="User[fio]" class="form-control" placeholder="">
                                     </div>
                                 </div>
                                 <div class="col-sm-6">
                                     <div class="mb-3">
-                                        <label class="form-label">Фамилия*</label>
-                                        <input type="text" name="" class="form-control" placeholder="">
-                                    </div>
+                                        <label class="form-label">Название компании*</label>
+                                        <input type="text" name="company_name" class="form-control" placeholder="">
+                                </div>
                                 </div>
                                 <div class="col-sm-12">
                                     <div class="mb-3">
                                         <label class="form-label">Email*</label>
-                                        <input type="email" class="form-control" placeholder="">
+                                        <input type="email" name="email" class="form-control" placeholder="">
                                     </div>
                                 </div>
                                 <div class="col-sm-12">
                                     <div class="mb-3">
                                         <label class="form-label">Номер телефона*</label>
-                                        <input type="text" class="form-control" value="+">
+                                        <input type="text" name="User[tel]" class="form-control" value="+">
                                     </div>
+                                    <input style="display: none;" type="text" name="User[comment]" value="Пробую демо версию"/>
+                                    <input style="display: none;" type="text" name="LoginForm[username]" value="demo" />
+                                    <input style="display: none;" type="text" name="LoginForm[password]" value="123456" />
+                                    <input style="display: none;" type="text" name="LoginForm[rememberMe]" value="1" />
                                 </div>
                                
-                                <div class="col-sm-12">
+                                <!--<div class="col-sm-12">
                                     <div class="mb-3">
                                         <label class="form-label">Страна*</label>
                                         <select class="form-control form-select" name="country" required>
@@ -130,17 +134,10 @@
                                             <option value="KZ">Kazakhstan</option>
                                         </select>
                                     </div>
-                                </div>
-                                <div class="col-sm-12">
-                                    <div class="mb-3">
-                                        <label class="form-label">Удобное время демонстрации*</label>
-                                        <input class="form-control" value="09:00" type="time" name="">
-                                    </div>
-                                </div>
-
+                                </div>-->
 
                                 <div class="col-12">
-                                    <button type="submit" class="btn btn-warning mt-4 d-block w-100"> Получить демо
+                                    <button type="submit" class="btn btn-warning mt-4 d-block w-100"> Попробовать
                                     </button>
                                 </div>
                             </div>
@@ -191,6 +188,9 @@
 <!--build:js-->
 <script src="assets/js/vendors/jquery-3.6.0.min.js"></script>
 <script src="assets/js/vendors/bootstrap.bundle.min.js"></script>
+<script src="assets/js/vendors/swiper-bundle.min.js"></script>
+<script src="assets/js/vendors/jquery.magnific-popup.min.js"></script>
+<script src="assets/js/vendors/aos.js"></script>
 <script src="assets/js/app.js"></script>
 <!--endbuild-->
 

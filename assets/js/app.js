@@ -123,22 +123,45 @@
 	
 	// Send form
 	$('.register-form').on('submit', function(e) {
-		e.preventDefault();
 		let $form = $(this);
-		$.ajax('handler.php', {
-			method: 'POST',
-			data: $(this).serialize(),
-			beforeSend: function() {
-				$form.find('button').prop('disabled', true);
-			},
-			success: function() {
-				$form.trigger('reset');
-				alert('Success');
-			},
-			complete: function() {
-				$form.find('button').prop('disabled', false);
-			}
-		});
+    let action = $form.attr('action');
+    if (action === 'https://demo.salesdoc.io/site/login') {
+      
+      if (!$form.hasClass('sent_to_amo')) {
+        event.preventDefault()
+        const full_name = $form.find('input[name="User[fio]"]').val();
+        const company_name = $form.find('input[name="company_name"]').val();
+        const phone = $form.find('input[name="User[tel]"]').val();
+        const email = $form.find('input[name="email"]').val();
+        const comment = $form.find('input[name="User[comment]"]').val();
+        $.ajax('handler.php', {
+          method: 'POST',
+          data: `full_name=${full_name}&company_name=${company_name}&phone=${phone}&email=${email}&comment=${comment}`,
+          complete: function() {
+            $form.addClass('sent_to_amo')
+            $form.submit();
+          }
+        })
+      }
+        
+    }
+    else {
+      e.preventDefault()
+      $.ajax('handler.php', {
+        method: 'POST',
+        data: $(this).serialize(),
+        beforeSend: function () {
+          $form.find('button').prop('disabled', true);
+        },
+        success: function () {
+          $form.trigger('reset');
+        },
+        complete: function () {
+          $form.find('button').prop('disabled', false);
+        }
+      });
+    }
+		
 	});
 	
 	// Parse the URL
