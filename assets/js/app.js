@@ -134,18 +134,23 @@
         const phone = $form.find('input[name="User[tel]"]').val();
         const email = $form.find('input[name="email"]').val();
         const comment = $form.find('input[name="User[comment]"]').val();
+
         $.ajax('handler.php', {
           method: 'POST',
           data: `full_name=${full_name}&company_name=${company_name}&phone=${phone}&email=${email}&comment=${comment}`,
           complete: function() {
             $form.addClass('sent_to_amo')
             $form.submit();
+            fbq('track', 'SubmitApplication');
+            dataLayer = window.dataLayer || [];
+            dataLayer.push({'event': 'formSuccess'});
           }
         })
       }
         
     }
     else {
+
       e.preventDefault()
       $.ajax('handler.php', {
         method: 'POST',
@@ -155,6 +160,9 @@
         },
         success: function () {
           $form.trigger('reset');
+          fbq('track', 'SubmitApplication');
+          dataLayer = window.dataLayer || [];
+          dataLayer.push({'event': 'formSuccess'});
         },
         complete: function () {
           $form.find('button').prop('disabled', false);

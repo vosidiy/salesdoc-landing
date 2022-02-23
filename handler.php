@@ -24,7 +24,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 		// create lead
 		$lead = $amo->lead;
 		$lead['name'] = 'New lead';
-		$lead['status_id'] = $status;
+		$lead['pipeline_id'] = $pipeline;
 		$lead['tags'] = trim($_POST['company_name']);
 		$lead['price'] = 0;
 		$lead->addCustomField('996581', trim($_POST['utm_source']));
