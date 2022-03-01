@@ -179,5 +179,26 @@
         results = regex.exec(location.search);
     return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
 	}
+
+  function checkDomain() {
+      const domains = window.location.host.split('.')
+      if (domains.length !== 2) {
+          window.location.pathname = '/domain_not_exists.html';
+      }
+  }
+
+  function updateCountryStuffs() {
+    $.ajax('country.php', {
+      success: function (data) {
+        const country_code = data['country_code'];
+        if (country_code === 'UZ') {
+          
+        }
+      }
+    })
+  }
+
+  checkDomain();
+  updateCountryStuffs();
 	
 })();
