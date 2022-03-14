@@ -118,7 +118,17 @@
 		$('input[name=utm_medium]').val(getParameterByName('utm_medium'));
 		$('input[name=utm_campaign]').val(getParameterByName('utm_campaign'));
 		$('input[name=utm_content]').val(getParameterByName('utm_content'));
-		$('input[name=utm_term]').val(getParameterByName('utm_term'));
+    $('input[name=utm_term]').val(getParameterByName('utm_term'));
+    
+    if (getParameterByName('utm_source').length === 0) {
+      if (document.referrer.length > 0) {
+        $('input[name=utm_source]').val(document.referrer)
+        $('input[name=utm_medium]').val('referrer')
+      }
+      else {
+        $('input[name=utm_source]').val('direct')
+      }
+    }
 	});
 	
 	// Send form
@@ -129,28 +139,37 @@
       
       if (!$form.hasClass('sent_to_amo')) {
         event.preventDefault()
-        const full_name = $form.find('input[name="User[fio]"]').val();
-        const company_name = $form.find('input[name="company_name"]').val();
-        const phone = $form.find('input[name="User[tel]"]').val();
-        const email = $form.find('input[name="email"]').val();
-        const comment = $form.find('input[name="User[comment]"]').val();
+
+        let searchParams = new URLSearchParams()
+        searchParams.append('full_name', $form.find('input[name="User[fio]"]').val())
+        searchParams.append('company_name', $form.find('input[name="company_name"]').val())
+        searchParams.append('phone', $form.find('input[name="User[tel]"]').val())
+        searchParams.append('email', $form.find('input[name="email"]').val())
+        searchParams.append('comment', $form.find('input[name="User[comment]"]').val())
+        searchParams.append('utm_source', $form.find('input[name=utm_source]').val())
+        searchParams.append('utm_campaign', $form.find('input[name=utm_campaign]').val())
+        searchParams.append('utm_content', $form.find('input[name=utm_content]').val())
+        searchParams.append('utm_term', $form.find('input[name=utm_term]').val())
 
         $.ajax('handler.php', {
           method: 'POST',
-          data: `full_name=${full_name}&company_name=${company_name}&phone=${phone}&email=${email}&comment=${comment}`,
+          data: searchParams.toString(),
+          beforeSend: function () {
+            $form.find('button').prop('disabled', true);
+          },
           complete: function() {
             $form.addClass('sent_to_amo')
-            $form.submit();
             fbq('track', 'SubmitApplication');
-            dataLayer = window.dataLayer || [];
-            dataLayer.push({'event': 'formSuccess'});
+            setTimeout(() => {
+              $form.submit();
+              $form.find('button').prop('disabled', false);
+            }, 500)
           }
         })
       }
         
     }
     else {
-
       e.preventDefault()
       $.ajax('handler.php', {
         method: 'POST',
