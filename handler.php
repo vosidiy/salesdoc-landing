@@ -24,14 +24,25 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 		// create lead
 		$lead = $amo->lead;
 		$lead['name'] = 'New lead';
-		$lead['pipeline_id'] = $pipeline;
+		$lead['pipeline_id'] = $status;
 		$lead['tags'] = trim($_POST['company_name']);
 		$lead['price'] = 0;
-		$lead->addCustomField('996581', trim($_POST['utm_source']));
-		$lead->addCustomField('996583', trim($_POST['utm_medium']));
-		$lead->addCustomField('996585', trim($_POST['utm_campaign']));
-		$lead->addCustomField('996589', trim($_POST['utm_term']));
-		$lead->addCustomField('996587', trim($_POST['utm_content']));
+		if (isset($_POST['utm_source'])) {
+			$lead->addCustomField('996581', trim($_POST['utm_source']));
+		}
+		if (isset($_POST['utm_medium'])) {
+			$lead->addCustomField('996583', trim($_POST['utm_medium']));
+		}
+		if (isset($_POST['utm_campaign'])) {
+			$lead->addCustomField('996585', trim($_POST['utm_campaign']));
+		}
+		if (isset($_POST['utm_term'])) {
+			$lead->addCustomField('996589', trim($_POST['utm_term']));
+		}
+		if (isset($_POST['utm_content'])) {
+			$lead->addCustomField('996587', trim($_POST['utm_content']));
+		}
+		
 		$lead_id = $lead->apiAdd();
 		
 		// linked model

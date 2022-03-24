@@ -113,21 +113,33 @@
     focus: '#name'
   });
 	
-	$(function() {
-		$('input[name=utm_source]').val(getParameterByName('utm_source'));
-		$('input[name=utm_medium]').val(getParameterByName('utm_medium'));
-		$('input[name=utm_campaign]').val(getParameterByName('utm_campaign'));
-		$('input[name=utm_content]').val(getParameterByName('utm_content'));
-    $('input[name=utm_term]').val(getParameterByName('utm_term'));
+  $(function () {
     
-    if (getParameterByName('utm_source').length === 0) {
-      if (document.referrer.length > 0) {
-        $('input[name=utm_source]').val(document.referrer)
-        $('input[name=utm_medium]').val('referrer')
-      }
-      else {
-        $('input[name=utm_source]').val('direct')
-      }
+    let s = location.search
+    if (s.length === 0) {
+      s = sessionStorage.getItem('utm') || ''
+    }
+ 
+    if (s.length === 0) {
+      return
+    }
+    
+    while (s.startsWith('?')) { // for cases when searchParam starts with more than one ?
+      s = s.substring(1)
+    }
+
+    sessionStorage.setItem('utm', s)
+    let param = new URLSearchParams(s)
+
+		$('input[name=utm_source]').val(param.get('utm_source'));
+		$('input[name=utm_medium]').val(param.get('utm_medium'));
+		$('input[name=utm_campaign]').val(param.get('utm_campaign'));
+		$('input[name=utm_content]').val(param.get('utm_content'));
+    $('input[name=utm_term]').val(param.get('utm_term'));
+    
+    if (param.get('utm_source').length === 0 && document.referrer.length > 0) {
+      $('input[name=utm_source]').val('referer')
+      $('input[name=utm_medium]').val(document.referrer)
     }
 	});
 	
@@ -160,6 +172,8 @@
           complete: function() {
             $form.addClass('sent_to_amo')
             fbq('track', 'SubmitApplication');
+            dataLayer = window.dataLayer || [];
+            dataLayer.push({'event': 'formSuccess'});
             setTimeout(() => {
               $form.submit();
               $form.find('button').prop('disabled', false);
@@ -179,12 +193,12 @@
         },
         success: function () {
           $form.trigger('reset');
-          fbq('track', 'SubmitApplication');
-          dataLayer = window.dataLayer || [];
-          dataLayer.push({'event': 'formSuccess'});
         },
         complete: function () {
           $form.find('button').prop('disabled', false);
+          fbq('track', 'SubmitApplication');
+          dataLayer = window.dataLayer || [];
+          dataLayer.push({'event': 'formSuccess'});
         }
       });
     }
