@@ -213,12 +213,12 @@
     return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
 	}
 
-  function checkDomain() {
-      const domains = window.location.host.split('.')
-      if (domains.length !== 2) {
-          window.location.pathname = '/domain_not_exists.html';
-      }
-  }
+  // function checkDomain() {
+  //     const domains = window.location.host.split('.')
+  //     if (domains.length !== 2) {
+  //         window.location.pathname = '/domain_not_exists.html';
+  //     }
+  // }
 
   function updateCountryStuffs() {
     $.ajax('country.php', {
