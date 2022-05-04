@@ -153,8 +153,8 @@
         event.preventDefault()
 
         let searchParams = new URLSearchParams()
-        searchParams.append('full_name', $form.find('input[name="User[fio]"]').val())
-        searchParams.append('company_name', $form.find('input[name="company_name"]').val())
+        searchParams.append('name', $form.find('input[name="User[fio]"]').val())
+        searchParams.append('company', $form.find('input[name="company_name"]').val())
         searchParams.append('phone', $form.find('input[name="User[tel]"]').val())
         searchParams.append('email', $form.find('input[name="email"]').val())
         searchParams.append('comment', $form.find('input[name="User[comment]"]').val())
@@ -162,8 +162,9 @@
         searchParams.append('utm_campaign', $form.find('input[name=utm_campaign]').val())
         searchParams.append('utm_content', $form.find('input[name=utm_content]').val())
         searchParams.append('utm_term', $form.find('input[name=utm_term]').val())
+        searchParams.append('target', $form.find('input[name=target]').val())
 
-        $.ajax('handler.php', {
+        $.ajax('/amocrm/amo.php', {
           method: 'POST',
           data: searchParams.toString(),
           beforeSend: function () {
@@ -185,7 +186,7 @@
     }
     else {
       e.preventDefault()
-      $.ajax('handler.php', {
+      $.ajax('/amocrm/amo.php', {
         method: 'POST',
         data: $(this).serialize(),
         beforeSend: function () {
@@ -193,6 +194,7 @@
         },
         success: function () {
           $form.trigger('reset');
+          // @TODO: Show success alert
         },
         complete: function () {
           $form.find('button').prop('disabled', false);
