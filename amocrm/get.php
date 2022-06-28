@@ -1,5 +1,7 @@
 <?php
 
+// Uncomment this, to get full info about given account.
+// NOTE: Don't forget to comment it again when you done.
 http_response_code(404); die();
 
 require_once 'config.php';

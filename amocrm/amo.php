@@ -1,4 +1,5 @@
 <?php
+// tutorial: https://habr.com/ru/post/650019/
 
 require_once 'access.php';
 
@@ -22,8 +23,6 @@ $comment = isset($_POST['comment']) ? $_POST['comment'] : '';
 
 $ip = $_SERVER["REMOTE_ADDR"];
 $domain = isset($_SERVER['HTTP_REFERER']) ? $_SERVER['HTTP_REFERER'] : 'salesdoc.io';
-$pipeline_id = 3334015;		//	Воронка
-$user_amo = 6095647;		//	Temur
 
 $utm_source   = isset($_POST['utm_source']) ? trim($_POST['utm_source']) : '';
 $utm_content  = isset($_POST['utm_content']) ? trim($_POST['utm_content']) : '';
@@ -35,7 +34,7 @@ $utm_term     = isset($_POST['utm_term']) ? trim($_POST['utm_term']) : '';
 $lead_data = [
     [
         "name" => $phone,
-        "responsible_user_id" => (int) $user_amo,
+        // "responsible_user_id" => (int) $user_amo,
         "pipeline_id" => (int) $pipeline_id,
         "_embedded" => [
             "metadata" => [
@@ -86,48 +85,48 @@ $lead_data = [
                 ]
             ]
         ],
-        "custom_fields_values" => [
-            [
-                "field_id" => 996581,
-                "values" => [
-                    [
-                        "value" => $utm_source
-                    ]
-                ]
-            ],
-            [
-                "field_id" => 996587,
-                "values" => [
-                    [
-                        "value" => $utm_content
-                    ]
-                ]
-            ],
-            [
-                "field_id" => 996583,
-                "values" => [
-                    [
-                        "value" => $utm_medium
-                    ]
-                ]
-            ],
-            [
-                "field_id" => 996585,
-                "values" => [
-                    [
-                        "value" => $utm_campaign
-                    ]
-                ]
-            ],
-            [
-                "field_id" => 996589,
-                "values" => [
-                    [
-                        "value" => $utm_term
-                    ]
-                ]
-            ]
-        ],
+        // "custom_fields_values" => [
+        //     [
+        //         "field_id" => 996581,
+        //         "values" => [
+        //             [
+        //                 "value" => $utm_source
+        //             ]
+        //         ]
+        //     ],
+        //     [
+        //         "field_id" => 996587,
+        //         "values" => [
+        //             [
+        //                 "value" => $utm_content
+        //             ]
+        //         ]
+        //     ],
+        //     [
+        //         "field_id" => 996583,
+        //         "values" => [
+        //             [
+        //                 "value" => $utm_medium
+        //             ]
+        //         ]
+        //     ],
+        //     [
+        //         "field_id" => 996585,
+        //         "values" => [
+        //             [
+        //                 "value" => $utm_campaign
+        //             ]
+        //         ]
+        //     ],
+        //     [
+        //         "field_id" => 996589,
+        //         "values" => [
+        //             [
+        //                 "value" => $utm_term
+        //             ]
+        //         ]
+        //     ]
+        // ],
     ]
 ];
 
@@ -179,18 +178,8 @@ function post($method, $data, $headers)  {
     $out = curl_exec($curl);
     $code = curl_getinfo($curl, CURLINFO_HTTP_CODE);
     $code = (int) $code;
-    $errors = [
-        301 => 'Moved permanently.',
-        400 => 'Wrong structure of the array of transmitted data, or invalid identifiers of custom fields.',
-        401 => 'Not Authorized. There is no account information on the server. You need to make a request to another server on the transmitted IP.',
-        403 => 'The account is blocked, for repeatedly exceeding the number of requests per second.',
-        404 => 'Not found.',
-        500 => 'Internal server error.',
-        502 => 'Bad gateway.',
-        503 => 'Service unavailable.'
-    ];
-
-    if ($code < 200 || $code > 204) die( "Error $code. " . (isset($errors[$code]) ? $errors[$code] : 'Undefined error') );
+    header('Content-Type: application/json');
+    if ($code < 200 || $code > 204) die($out);
     return json_decode($out);
 }
 
