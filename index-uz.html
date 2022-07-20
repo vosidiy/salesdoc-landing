@@ -1,0 +1,1006 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta name="author" content="Salesdoctor.uz">
+
+    <link rel="shortcut icon" href="assets/images/favicon.ico" type="image/x-icon">
+
+    <title>Distributsiya va sotuvni nazorat qilish programmasi  - Sales doctor</title>
+
+    <meta name="description" content="Kompyuter yordamida savdo va omborni boshqarish xizmati, distribtsiyani boshqarish dasturi, Sotish va mahsulot tarqatishni nazorat qilish, mobil ilova ">
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/fontawesome.css">
+
+    <!-- Google Tag Manager -->
+    <script>
+        (function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-KCHLSPB');
+    </script>
+    <!-- End Google Tag Manager -->
+
+    <meta name="facebook-domain-verification" content="bk5uwlhk705eg37nsbgkojjp9kvp79" />
+
+    <!-- Meta Pixel Code -->
+    <script>
+        !function(f,b,e,v,n,t,s)
+        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+        n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t,s)}(window, document,'script',
+        'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '424425709701100');
+        fbq('track', 'PageView');
+    </script>
+    <noscript>
+        <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=424425709701100&ev=PageView&noscript=1"/>
+    </noscript>
+    <!-- End Meta Pixel Code -->
+
+</head>
+<body>
+<!-- main content wrapper start -->
+<div class="main-wrapper">
+
+<!--header start-->
+<header class="main-header position-absolute w-100">
+    <nav class="navbar navbar-expand-lg navbar-light sticky-header">
+        <div class="container d-flex align-items-center justify-content-lg-between position-relative">
+            <a href="index.html" class="navbar-brand d-flex align-items-center text-decoration-none">
+                <img src="assets/images/logo-white.png" height="40" alt="logo" class="logo-white" />
+                <img src="assets/images/logo.png" height="40" alt="logo" class="logo-color" />
+            </a>
+            <b class="clearfix"></b>
+            <div class="collapse navbar-collapse">
+                <ul class="navbar-nav mx-auto main-menu">
+                    <li> <a href="index.html" class="nav-link"> Dastur </a> </li>
+                    <li> <a href="#section_features" class="nav-link"> Yechimlar </a> </li>
+                    <li> <a href="#section_pricing" class="nav-link"> Tariflar </a> </li>
+                    <li> <a href="#section_reviews" class="nav-link"> Izohlar </a> </li>
+                    <li> <a href="page-blog.html" class="nav-link"> Blog  </a> </li>
+                    <li> <a href="eng.html" class="nav-link"> | &nbsp; English </a> </li>
+                </ul>
+            </div>
+
+            <div class="action-btns text-end">
+                <a href="/page-demo.html" class="d-none d-md-inline-block btn btn-sm btn-success"> Попробовать демо </a>
+                <a href="https://t.me/salesdoctor_bot" class="btn btn-sm btn-icon btn-success" target="_blank"> <i class="fa fa-comment-dots fa-lg"></i></a>
+                <a class="mobile-menu btn px-2 ms-2  d-lg-none" href="#offcanvasWithBackdrop" role="button">
+                    <span class="icon far fa-lg fa-bars" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBackdrop"></span>
+            </a>
+            </div>
+
+            <!--offcanvas menu start-->
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasWithBackdrop">
+                <div class="offcanvas-header d-flex align-items-center">
+                    <a href="index.html" class="ms-2 text-decoration-none">
+                        <img src="assets/images/logo.png" alt="logo" height="38" />
+                    </a>
+                    <button type="button" class="close-btn text-danger" data-bs-dismiss="offcanvas" aria-label="Close">
+                        <i class="far fa-lg fa-close"></i>
+                    </button>
+                </div>
+                <div class="offcanvas-body">
+                    <ul class="nav col-12 col-md-auto justify-content-center main-menu">
+                        <li> <a href="index.html" class="nav-link"> Dastur </a> </li>
+                        <li> <a href="#section_features" class="nav-link"> Yechimlar </a> </li>
+                        <li> <a href="#section_pricing" class="nav-link"> Tariflar </a> </li>
+                        <li> <a href="#section_reviews" class="nav-link"> Izohlar </a> </li>
+                        <li> <a href="page-blog.html" class="nav-link"> Blog  </a> </li>
+                        <li> <a href="eng.html" class="nav-link"> English </a> </li>
+                    </ul>
+                </div>
+            </div>
+            <!--offcanvas menu end-->
+        </div>
+    </nav>
+</header>
+<!--header section end-->
+
+<!--hero section start-->
+<section class="hero-section pb-0">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6 col-md-10">
+                <div class="position-relative hero-content-wrap mt-5 mt-lg-0 mt-xl-0" style="z-index: 9">
+                    
+                <h1 class="fw-bold"> Smartfon orqali <br> biznesingizni boshqaring 🚀  </h1>
+                <p class="lead"  style="max-width:600px"> Sales Doctor- sizning distributsiyangizni nazorat qilish bo'yicha yordamchingiz. <br> Savdo jarayoni monitoringi, shuningdek savdodagi zaif nuqtalarni bartaraf etish va barcha bo'limlar ishida to'liq shaffoflik.  </p>
+                <div class="mt-5">
+                    <a href="page-demo.html" class="btn btn-success me-3"> Dasturni ko'rish </a>
+                    <a style="display: none" href="http://www.youtube.com/watch?v=hAP2QF--2Dg" class="popup-youtube btn btn-light"> <i class="fas fa-play-circle fa-lg"></i> Bizning tariximiz </a>
+                </div>
+                   
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-8 mt-5">
+                <div class="hero-screen-wrap">
+                    <img src="assets/images/intro2.jpg" class="img-fluid">
+                </div>
+            </div> <!-- col.// -->
+        </div>
+    </div>
+</section>
+<!--hero section end-->
+
+
+<!--features grid section start-->
+<section id="section_features" class="feature-section bg-light ptb-100">
+    <div class="container">
+            <header class="section-heading text-center">
+                <h2> Bizning imkoniyatlarimiz  </h2>
+            </header>
+            <div class="feature-grid mt-5">
+                <article class="feature-card border border-light border-2 bg-white rounded-custom">
+                    <div class="feature-icon rounded bg-success mb-4">
+                        <i class="fal fa-boxes fa-2x text-white"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h3 class="h5">Savdo bo'limi nazorat ostida</h3>
+                        <p class="mb-0"> Real vaqt rejimida soting, ombor holati va buyurtmalarni kuzatib boring.  </p>
+                    </div>
+                </article>
+                <article class="feature-card border border-light border-2 bg-white rounded-custom">
+                    <div class="feature-icon rounded bg-danger mb-4">
+                        <i class="fal fa-building fa-2x text-white"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h3 class="h5"> Istalgan joydan ishlang </h3>
+                        <p class="mb-0"> Smartfon yoki planshetingiz yordamida dunyoning istalgan nuqtasidan biznesingizni boshqaring.  </p>
+                    </div>
+                </article>
+                <article class="feature-card border border-light border-2 bg-white rounded-custom">
+                    <div class="feature-icon rounded bg-dark mb-4">
+                        <i class="fal fa-analytics fa-2x text-white"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h3 class="h5"> Aktual hisobotlar onlayn tartibda  </h3>
+                        <p class="mb-0"> Excelni unuting. Ikki marta (klik) bosish orqali batafsil hisobotlarni oling.  </p>
+                    </div>
+                </article>
+                <article class="feature-card border border-light border-2 bg-white rounded-custom">
+                    <div class="feature-icon rounded bg-info mb-4">
+                        <i class="fal fa-satellite fa-2x text-white"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h3 class="h5"> GPS monitoringi  </h3>
+                        <p class="mb-0"> GPS navigatsiyasi yordamida savdo vakillarining harakatini kuzatib boring.  </p>
+                    </div>
+                </article>
+                <article class="feature-card border border-light border-2 bg-white rounded-custom">
+                    <div class="feature-icon rounded bg-warning mb-4">
+                        <i class="fal fa-laptop fa-2x text-white"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h3 class="h5"> Qog'ozsiz distributsiya  </h3>
+                        <p class="mb-0"> Distributsiya tizimi o'zgarmaydi. Balki, biz qog'ozbozlikni kamaytiramiz va sotuv  bo'limining samaradorligini oshiramiz.   </p>
+                    </div>
+                </article>
+                <article class="feature-card border border-light border-2 bg-white rounded-custom">
+                    <div class="feature-icon rounded bg-primary mb-4">
+                        <i class="fal fa-paper-plane fa-2x text-white"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h3 class="h5"> Telegram-bot  </h3>
+                        <p class="mb-0"> Hisobotlarni muntazam tarzda kunning istalgan vaqtida Telegram orqali oling.  </p>
+                    </div>
+                </article>
+            </div>
+            <br>
+            <a style="display: none" href="http://www.youtube.com/watch?v=hAP2QF--2Dg" class="popup-youtube btn w-100 btn-outline-success"> Еще больше о том, как это работает  </a>
+    </div> <!-- container.// -->
+</section>
+<!--features grid section end-->
+
+
+<!--feature section start-->
+    <section class="feature-section ptb-100">
+        <div class="container">
+            <div class="row align-items-center justify-content-between">
+                <div class="col-lg-6">
+                    <div class="feature-content-wrap ps-lg-5">
+                        <h2> Menejer imkoniyatlari </h2>
+                      
+                        <ul class="list-unstyled mt-5">
+                            <li class="d-flex align-items-start mb-2">
+                                <div class="icon-box bg-success-soft rounded me-4">
+                                    <i class="fas fa-satellite text-success"></i>
+                                </div>
+                                <div class="icon-content">
+                                    <h3 class="h5"> GPS-navigatsiya  </h3>
+                                    <p> Siz sotuv bo'limining barcha harakatlari haqida bilib borasiz. Shuningdek, agentlar qaysi nuqtalarga tashrif buyurilgan va buyurmaganligini kuzatishingiz mumkin. 
+                                    </p>
+                                </div>
+                            </li>
+                            <li class="d-flex align-items-start mb-2">
+                                <div class="icon-box bg-success-soft rounded me-4">
+                                    <i class="fas fa-analytics text-success"></i>
+                                </div>
+                                <div class="icon-content">
+                                    <h3 class="h5"> Savdoni rejalashtirish va KPI  </h3>
+                                    <p> Tizimning o'zi savdo rejasini tavsiya qiladi va rejalaringizni bajarishingiz uchun har bir kun uchun prognoz beradi. Shuningdek, siz KPI-laringizni o'rnatishingiz va savdo vakili daromadlarini hisoblashingiz mumkin. 
+                                    </p>
+                                </div>
+                            </li>
+                            <li class="d-flex align-items-start mb-2">
+                                <div class="icon-box bg-success-soft rounded me-4">
+                                    <i class="fas fa-map-marker-alt text-success"></i>
+                                </div>
+                                <div class="icon-content">
+                                    <h3 class="h5"> Barcha filiallar yagona dasturda </h3>
+                                    <p> Siz istalgancha filiallar yaratishingiz va ularni bir joydan turib boshqarishingiz mumkin. Yagona dastur yordamida barcha filiallar uchun jamlangan hisobotlarni oling. 
+                                    </p>
+                                </div>
+                            </li>
+                            <li class="d-flex align-items-start mb-2">
+                                <div class="icon-box bg-success-soft rounded me-4">
+                                    <i class="fas fa-warehouse text-success"></i>
+                                </div>
+                                <div class="icon-content">
+                                    <h3 class="h5"> Omborni boshqarish  </h3>
+                                    <p> 
+                                        Sotuvlar tarixi asosida qancha zaxira bo'lishi lozimligi haqida oldindan bilib oling. Shuningdek, siz ma'lum bir sana uchun qoldiqlarni bilib olishingiz va moliyaviy hisobot olishingiz mumkin. 
+                                    </p>
+                                </div>
+                            </li>
+                        </ul>
+                        <a href="/page-demo.html" class="btn btn-success me-3"> Dasturni ishlatib ko'rish </a>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="image-wrap">
+                        <img src="assets/images/screens.jpg" alt="Screenshot salesdoctor" class="img-fluid">
+                    </div>
+                </div> 
+            </div> <!-- row end-->
+        </div> <!-- container end-->
+    </section>
+    <!--feature section end-->
+
+
+<!-- app two feature two start -->
+<section class="app-two-feature-two ptb-100 bg-light">
+    <div class="container">
+        <div class="row align-items-center justify-content-lg-between">
+            <div class="col-xl-6 col-lg-6 col-md-12">
+                <div class="feature-img-wrap position-relative d-flex flex-column align-items-end">
+              
+                    <img src="assets/images/user.jpg" alt="Shipment person" class="img-fluid rounded">
+                </div>
+            </div>
+            <div class="col-xl-6 col-lg-6">
+                <div class="app-two-feature-two-right ms-lg-5">
+                    <div class="feature-content-wrap">
+                        <h2> Savdo vakilining imkoniyatlari </h2>
+                        
+                        <ul class="list-unstyled mt-5">
+                            <li class="d-flex align-items-start mb-2">
+                                <div class="icon-box bg-success-soft rounded me-4">
+                                    <i class="fas fa-money-bill text-success"></i>
+                                </div>
+                                <div class="icon-content">
+                                    <h3 class="h5"> Qarzdorlik </h3>
+                                    <p> Savdo vakili har bir mijozning qarzdorligini yoki qarzdorlarning umumiy ro'yxatini ko'rish imkoniyatiga ega. 
+                                    </p>
+                                </div>
+                            </li>
+                            <li class="d-flex align-items-start mb-2">
+                                <div class="icon-box bg-success-soft rounded me-4">
+                                    <i class="fas fa-analytics text-success"></i>
+                                </div>
+                                <div class="icon-content">
+                                    <h3 class="h5"> Hisobotlar va KPI  </h3>
+                                    <p> Kundalik va oylik hisobotlarni, KPI rivojini va daromadlarni ko'rib boring.
+                                    </p>
+                                </div>
+                            </li>
+                            <li class="d-flex align-items-start mb-2">
+                                <div class="icon-box bg-success-soft rounded me-4">
+                                    <i class="fas fa-history text-success"></i>
+                                </div>
+                                <div class="icon-content">
+                                    <h3 class="h5"> Mijoz tarixi  </h3>
+                                    <p> Ilova har bir mijozingiz uchun individual profil yaratadi va mijozingiz qaysi mahsulotlarni sotib olgani, qachon va qancha qarzdorligi haqida maʼlumot olish imkonini beradi. 
+                                    </p>
+                                </div>
+                            </li>
+                            <li class="d-flex align-items-start mb-2">
+                                <div class="icon-box bg-success-soft rounded me-4">
+                                    <i class="fas fa-warehouse text-success"></i>
+                                </div>
+                                <div class="icon-content">
+                                    <h3 class="h5"> Ombor </h3>
+                                    <p> Ilova ombordagi tovarlar mavjudligini onlayn ko'rish imkonini beradi.
+                                    </p>
+                                </div>
+                            </li>
+                        </ul>
+                        <a href="/page-demo.html" class="btn btn-success me-3"> Dasturni ko'rish </a>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- app two feature two end -->
+
+<!--feature section start-->
+<section class="feature-section-two ptb-100">
+    <div class="container">
+        <div class="row align-items-center justify-content-center">
+            <div class="col-lg-6 col-md-12">
+                    <h2>Ekspeditor haqida-chi? </h2>
+                    
+                    <ul class="list-unstyled mt-5">
+                        <li class="d-flex align-items-start mb-2">
+                            <div class="icon-box bg-success-soft rounded me-4">
+                                <i class="fas fa-map-marker-alt text-success"></i>
+                            </div>
+                            <div class="icon-content">
+                                <h3 class="h5">GPS marshrut </h3>
+                                <p>Ilova kunning boshida marshrut yaratish, bir kunga rejalashtirilgan savdo nuqtalarining to'liq ro'yxatini ko'rish imkonini beradi. 
+                                </p>
+                            </div>
+                        </li>
+                        <li class="d-flex align-items-start mb-2">
+                            <div class="icon-box bg-success-soft rounded me-4">
+                                <i class="fas fa-money-bill text-success"></i>
+                            </div>
+                            <div class="icon-content">
+                                <h3 class="h5">To'lovni qabul qilish  </h3>
+                                <p>To'lovni qabul qilgandan so'ng, xodim dasturga ma'lumotlarni kiritadi va ish kunining oxirida dastur olingan mablag'lar to'g'risida hisobot beradi 
+                                </p>
+                            </div>
+                        </li>
+                        <li class="d-flex align-items-start mb-2">
+                            <div class="icon-box bg-success-soft rounded me-4">
+                                <i class="fas fa-truck text-success"></i>
+                            </div>
+                            <div class="icon-content">
+                                <h3 class="h5"> Buyurtma holati </h3>
+                                <p> Agar mijoz ma'lum bir mahsulotni qo'shimcha sotib olishga qaror qilsa yoki biron sababga ko'ra mahsulot to'liq bormagan bo'lsa, ekspeditor buyurtmani bevosita o'zgartirish imkoniyatiga ega. 
+                                </p>
+                            </div>
+                        </li>
+                        <li class="d-flex align-items-start mb-2">
+                            <div class="icon-box bg-success-soft rounded me-4">
+                                <i class="fas fa-store text-success"></i>
+                            </div>
+                            <div class="icon-content">
+                                <h3 class="h5"> Qarzdorlar ro'yxati </h3>
+                                <p> Ekspeditor har bir mijozning qarzini yoki qarzdorlarning umumiy ro'yxatini ko'rish, shuningdek, solishtirish hisobotini yuklab olish imkoniyatiga ega. 
+                                </p>
+                            </div>
+                        </li>
+                    </ul>
+                    <a href="/page-demo.html" class="btn btn-success me-3"> Dasturni ishlatib ko'rish </a>
+            </div>
+            <div class="col-lg-6 col-md-7">
+                <div class="app-two-feature-two-img">
+                    <img src="assets/images/app.jpg" alt="feature image" class="img-fluid" />
+                </div>
+
+                
+            </div>
+        </div>
+    </div>
+</section>
+<!--feature section end-->
+
+
+
+<section class="app-two-download-cta ptb-60 bg-success">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-6 col-xl-6 col-md-10">
+                <div class="section-heading text-center">
+                    <h2 class="text-white">Mobil ilovalar  </h2>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center mx-auto text-center" style="max-width: 920px">
+            <div class="col-lg-4 col-12">
+                <article class="border p-4 rounded">
+                   <h6 class="text-white mb-3"> Savdo vakillari uchun ilova </h6>
+
+                   <a target="_blank" href="https://play.google.com/store/apps/details?id=uz.salesdoctor">
+                       <img src="assets/images/app-btn.svg" height="48">
+                   </a>
+                </article>
+            </div> <!-- col end--> 
+            <div class="col-lg-4 col-12">
+                <article class="border p-4 rounded">
+                    <h6  class="text-white mb-3"> Auditorlar uchun ilova  </h6>
+
+                    <a target="_blank" href="https://play.google.com/store/apps/details?id=uz.salesdoctor.sd_audit">
+                       <img src="assets/images/app-btn.svg" height="48">
+                   </a>
+                </article>
+            </div> <!-- col end--> 
+            <div class="col-lg-4 col-12">
+                <article class="border p-4 rounded">
+                    <h6  class="text-white  mb-3"> Yetkazib beruvchi uchun ilova </h6>
+
+                    <a target="_blank" href="https://play.google.com/store/apps/details?id=uz.salesdoctor.delivery">
+                       <img src="assets/images/app-btn.svg" height="48">
+                   </a>
+                </article>
+            </div> <!-- col end--> 
+        </div> <!-- row end--> 
+    </div>
+</section>
+<!--app download  end--> 
+
+<!--customer review tab section start-->
+<section id="section_reviews" class="testimonial-section ptb-100 bg-success-soft">
+    <div class="container">
+        <header class="section-heading text-center" data-aos="fade-up">
+            <h2>Izohlar</h2>
+        </header>
+        <div class="position-relative w-100" data-aos="fade-up" data-aos-delay="50">
+            <div class="swiper-container testimonialSwiper">
+                <div class="swiper-wrapper">
+                    
+                    <article class="swiper-slide bg-white shadow-sm p-4 rounded-custom">
+                        <blockquote>
+                           <p>Men kompaniyamiz uchun dasturni tayyorlagani va oxirgacha ishlab chiqqani uchun Sales Doctor jamoasiga o'z minnatdorchiligimni bildirmoqchiman. </p> 
+                           <p>Yana shularni ham alohida ta'kidlashni istab qolardim: Hamkorlik jarayonida yuzaga keladigan har qanday muammolarni hal qilishda individual yondashuv, qaror qabul qilishda tezkorlik, o'z zimmasiga olgan majburiyatlarni bajarish va xodimlarning professionalligi. </p>
+                            <p>Bundan tashqari, maqbul narx siyosati va yuqori sifatga e'tibor qaratmoqchiman, bundan juda shodman! </p>
+                        </blockquote>
+                        <div class="author-info mb-3">
+                            <img class="float-end" src="assets/images/brands/nmedov.jpg" height="80">
+                            <h6 class="mb-0">Ulug'bek Ismoilov</h6>
+                            <small>Marketolog - <b>Nmedov Uzbekistan</b></small>
+                        </div>
+                        
+                    </article>
+                    
+                    <article class="swiper-slide bg-white shadow-sm p-4 rounded-custom">
+                        <blockquote>
+                           <p>“Good Food Group” MCHJ “Maselko” savdo belgisi ostida O‘zbekistonda yog‘ mahsulotlari ishlab chiqaruvchi yirik korxona hisoblanadi. </p>
+                            <p>Kompaniyamiz ish yurutishni elektron formatda amalga oshirishda “Sales Doctor” dasturiy mahsulini ishlab chiqaruvchi “Sales Doctor Solutions” MChJga to‘liq tayanadi </p>
+                            <p>Ushbu dastur tufayli bizning xodimlarimiz kundalik ravishda sotuvlarni osongina kuzatib boradi, prognoz qiladi va boshqaradi va shu bilan savdo o'sishini ta'minlaydi. </p>
+                        </blockquote>
+                        <div class="author-info">
+                            <img class="float-end" src="assets/images/brands/maselko.jpg" height="80">
+                            <h6 class="mb-0">G'ofurov Jahongir </h6>
+                            <small>Savdo bo'yicha direktor  - <b> OOO "Good Food Group", Maselko </b></small>
+                        </div>
+                    </article>
+                    
+                </div>
+            </div>
+            <span class="swiper-button-next"></span>
+            <span class="swiper-button-prev"></span>
+        </div>
+
+        
+
+        <header class="mt-5 section-heading text-center" data-aos="fade-up">
+            <h5>Biz yuzlab korxonalarga yordam beramiz, Shu jumladan... </h5>
+        </header>
+
+        <article class="integration-wrapper position-relative w-100">
+            <ul class="integration-list list-unstyled">
+                <li>
+                    <div class="single-integration">
+                        <img src="assets/images/brands/ulker.jpg" width="150" alt="Logo" class="img-fluid">
+                        <p class="mb-0 mt-2">Ulker</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="single-integration">
+                        <img src="assets/images/brands/ehrmann.jpg" width="150" alt="Logo" class="img-fluid">
+                        <p class="mb-0 mt-2">Ehrmann</p>
+                    </div>
+                </li>
+
+                <li>
+                    <div class="single-integration">
+                        <img src="assets/images/brands/hochland.jpg" width="150" alt="Logo" class="img-fluid">
+                        <p class="mb-0 mt-2">Hochland</p>
+                    </div>
+                </li>
+
+                <li>
+                    <div class="single-integration">
+                        <img src="assets/images/brands/merci.jpg" width="150" alt="Logo" class="img-fluid">
+                        <p class="mb-0 mt-2">Merci</p>
+                    </div>
+                </li>
+
+                <li>
+                    <div class="single-integration">
+                        <img src="assets/images/brands/campina.jpg" width="150" alt="Logo" class="img-fluid">
+                        <p class="mb-0 mt-2">Campina</p>
+                    </div>
+                </li>
+
+                <li>
+                    <div class="single-integration">
+                        <img src="assets/images/brands/mamba.jpg" width="150" alt="Logo" class="img-fluid">
+                        <p class="mb-0 mt-2">Mamba</p>
+                    </div>
+                </li>
+                
+                <li>
+                    <div class="single-integration">
+                        <img src="assets/images/brands/crafers.jpg" width="150" alt="Logo" class="img-fluid">
+                        <p class="mb-0 mt-2">Crafers</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="single-integration">
+                        <img src="assets/images/brands/lalaku.jpg" width="150" alt="Logo" class="img-fluid">
+                        <p class="mb-0 mt-2">Lalaku</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="single-integration">
+                        <img src="assets/images/brands/dena.jpg" width="150" alt="Logo" class="img-fluid">
+                        <p class="mb-0 mt-2">Dena</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="single-integration">
+                        <img src="assets/images/brands/vitamilk.jpg" width="150" alt="Logo" class="img-fluid">
+                        <p class="mb-0 mt-2">Vita milk</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="single-integration">
+                        <img src="assets/images/brands/maselko.jpg" width="150" alt="Logo" class="img-fluid">
+                        <p class="mb-0 mt-2">Maselko</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="single-integration">
+                        <img src="assets/images/brands/kippers.jpg" width="150" alt="Logo" class="img-fluid">
+                        <p class="mb-0 mt-2">Kippers</p>
+                    </div>
+                </li>
+            </ul>
+        </article>
+
+    </div> <!-- container.// -->
+</section>
+<!--customer review tab section end-->
+
+
+<!--pricing section start-->
+    <section id="section_pricing" class="pricing-section bg-light ptb-100">
+        <div class="container">
+            <header class="section-heading text-center">
+                <h2> Dasturiy ta'minot narxi  </h2>
+                <p> Tadbiq qilish, yangilash va mijozlarga xizmat ko'rsatish -  <u>Bepul</u></p>
+            </header>
+            <div class="row">
+                <div class="col-lg-4 col-md-6">
+                    <article class="position-relative h-100 single-pricing-wrap rounded-custom bg-white custom-shadow p-5 mb-4 mb-lg-0">
+                        <div class="pricing-header mb-32">
+                            <h4 class="fw-semi-bold"> 150 000 so‘m <br> 
+                                <small class="text-muted">/oyiga 1 ta litsenziyaga </small>
+                            </h4>
+                        </div>
+                        <div class="pricing-info">
+                            <ul class="mb-0 pricing-feature-list list-unstyled">
+                                <li><i class="fas fa-circle fa-2xs text-warning me-2"></i> 
+                                    Savdo vakili 
+                                </li>
+                                <li><i class="fas fa-circle fa-2xs text-warning me-2"></i> 
+                                    Van selling (sotuvchi) 
+                                </li>
+                            </ul>
+                        </div>
+                    </article>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <article class="position-relative h-100 single-pricing-wrap rounded-custom bg-white custom-shadow p-5 mb-4 mb-lg-0">
+                        <div class="pricing-header mb-32">
+                            <h4 class="fw-semi-bold">100 000 so‘m <br> 
+                                <small class="text-muted">/oyiga 1 ta litsenziyaga </small>
+                            </h4>
+                        </div>
+                        <div class="pricing-info">
+                            <ul class="mb-0 pricing-feature-list list-unstyled">
+                                <li><i class="fas fa-circle fa-2xs text-warning me-2"></i> 
+                                    Supervisor 
+                                </li>
+                                <li><i class="fas fa-circle fa-2xs text-warning me-2"></i> 
+                                    Admin
+                                </li>
+                                <li><i class="fas fa-circle fa-2xs text-warning me-2"></i> 
+                                    Yetkazib beruvchi 
+                                </li>
+                                <li><i class="fas fa-circle fa-2xs text-warning me-2"></i> 
+                                    Merchandiser 
+                                </li>
+                            </ul>
+                        </div>
+                    </article>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <article class="position-relative h-100 single-pricing-wrap rounded-custom bg-white custom-shadow p-5 mb-4 mb-lg-0">
+                        <div class="pricing-header mb-32">
+                            <h4 class="fw-semi-bold">Bepul  <br> 
+                                <small class="text-muted">/oyiga </small>
+                            </h4>
+                        </div>
+                        <div class="pricing-info">
+                            <ul class="mb-0 pricing-feature-list list-unstyled">
+                                <li><i class="fas fa-circle fa-2xs text-warning me-2"></i> 
+                                    Menejer 
+                                </li>
+                                <li><i class="fas fa-circle fa-2xs text-warning me-2"></i> 
+                                    Operator
+                                </li>
+                                <li><i class="fas fa-circle fa-2xs text-warning me-2"></i> 
+                                    Hisobchi
+                                </li>
+                                <li><i class="fas fa-circle fa-2xs text-warning me-2"></i> 
+                                    Ombor mudiri 
+                                </li>
+                                <li><i class="fas fa-circle fa-2xs text-warning me-2"></i> 
+                                    Hamkor 
+                                </li>
+                            </ul>
+                        </div>
+                    </article>
+                </div> <!-- col end-->
+            </div> <!-- row end-->
+        </div> <!-- container end-->
+    </section>
+    <!--pricing section end-->
+
+
+
+<!-- app two feature three start -->
+<section class="app-two-feature-three bg-light pb-100">
+    <div class="container" style="max-width: 920px">
+        <header class="text-center section-heading ">
+            <h2> Ko'p beriladigan savollar  </h2>
+        </header>
+        <div class="accordion faq-accordion" id="accordionFAQ">
+            <article class="accordion-item">
+                <h5 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-1">
+                        Sales Doctor-ning distributsiya avtomatizatsiyasi boshqa dasturlarga nisbatan qanday afzalliklari bor?
+                    </button>
+                </h5>
+                <div id="collapse-1" class="accordioncollapse collapse" data-bs-parent="#accordionFAQ">
+                    <div class="accordion-body">
+                       Sales Doctor создан людьми, которые долгое время работали в сфере дистрибуции. Именно поэтому нам удалось закрыть все необходимые задачи, с которыми вы можете столкнуться в процессе работы, “под ключ”. Мы помогаем вашему бизнесу работать эффективно и прозрачно, благодаря управлению сервисом из смартфона, GPS-мониторингу, удобным и понятным отчетам, кастомизируемой аналитике и системе KPI.
+                    </div>
+                </div>
+            </article>
+            <article class="accordion-item">
+                <h5 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-2">
+                       Qanday qilib ombor hisob-kitobini yuritaman va Sales Doctorda buxgalteriya hisobini boshqaraman? 
+                    </button>
+                </h5>
+                <div id="collapse-2" class="accordion-collapse collapse" data-bs-parent="#accordionFAQ">
+                    <div class="accordion-body">
+                        В нашей системе вы можете вести учет склада. При обработке заказа расчет происходит автоматически. Вы также можете использовать несколько видов складов: реализация, возврат и резерв. А с помощью раздела “касса” вы сможете вести учет баланса клиента, провести акт сверки по каждому из них и информировать их о задолженности с помощью смс-оповещений. 
+
+                    </div>
+                </div>
+            </article>
+            <article class="accordion-item">
+                <h5 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-3">
+                        Sales Doctor-da qanday turdagi foydalanuvchilar mavjud?
+                    </button>
+                </h5>
+                <div id="collapse-3" class="accordion-collapse collapse" data-bs-parent="#accordionFAQ">
+                    <div class="accordion-body">
+                        В Sales Doctor есть возможность создать большое количество пользователей с разным функционалом и уровнем доступа (торговый представитель, вэнселлинг, продавец, супервайзер, экспедитор, мерчендайзер, оператор, менеджер, управляющий складом, партнер и кассир). 
+                    </div>
+                </div>
+            </article>
+            <article class="accordion-item">
+                <h5 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-4">
+                        Sales Doctorda merchandiserlar uchun audit tahlili bormi? 
+                    </button>
+                </h5>
+                <div id="collapse-4" class="accordion-collapse collapse" data-bs-parent="#accordionFAQ">
+                    <div class="accordion-body">
+                        В нашем сервисе мы можете вести анализ аудита вашей продукции благодаря функционалу пользователя “мерчендайзер”.
+                    </div>
+                </div>
+            </article>
+            <article class="accordion-item">
+                <h5 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-5">
+                        Hisobot turlari, (KPI) sozlash 
+                    </button>
+                </h5>
+                <div id="collapse-5" class="accordion-collapse collapse" data-bs-parent="#accordionFAQ">
+                    <div class="accordion-body">
+                        В нашей системе представлены более 30 видов отчетов (отчеты по продажам, количеству заказов, отгрузкам, бонусам, визитам торговых представителей и т.д.), есть даже свой конструктор отчетов
+                    </div>
+                </div>
+            </article>
+            <article class="accordion-item">
+                <h5 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-6">
+                        Hisob-faktura turlari 
+                    </button>
+                </h5>
+                <div id="collapse-6" class="accordion-collapse collapse" data-bs-parent="#accordionFAQ">
+                    <div class="accordion-body">
+                        В Sales Doctor вы можете создать накладные для заведующего складом, экспедитора и клиента. 
+                    </div>
+                </div>
+            </article>
+            <article class="accordion-item">
+                <h5 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-7">
+                        Foydalanuvchilarning GPS monitoringi 
+                    </button>
+                </h5>
+                <div id="collapse-7" class="accordion-collapse collapse" data-bs-parent="#accordionFAQ">
+                    <div class="accordion-body">
+                        Вы сможете наблюдать за передвижением торговых представителей с помощью GPS-навигации. 
+                    </div>
+                </div>
+            </article>
+            <article class="accordion-item">
+                <h5 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-8">
+                        Jamoa ta'limi qanday olib boriladi? 
+                    </button>
+                </h5>
+                <div id="collapse-8" class="accordion-collapse collapse" data-bs-parent="#accordionFAQ">
+                    <div class="accordion-body">
+                        Мы предлагаем два вида обучения для команд.  Оффлайн-формат в вашем или нашем офисе (платная основа). Онлайн формат через программу удаленного доступа (бесплатно). 
+                    </div>
+                </div>
+            </article>
+        </div>
+    </div> <!-- container .// -->
+</section>
+<!-- app two feature three end -->
+
+
+<!--our location address start-->
+<section id="section_contacts" class="office-address-section ptb-100 bg-white">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-6 col-md-12">
+                <div class="section-heading text-center">
+                    <h2> Bizning ofislar  </h2>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4 col-md-4 mt-4 mt-lg-0 mt-xl-0">
+                <div class="rounded-custom border d-block office-address overflow-hidden z-2" style="background: url('assets/images/about/tashkent2.jpg')no-repeat center center / cover">
+                    <div class="office-content text-center p-4">
+                        <span class="office-overlay"></span>
+                        <div class="office-info">
+                            <h5> Toshkent,  <br> O'zbekiston  </h5>
+                            <address>
+                               Toshkent, Ahmad Donish koch. 25, 2-qavat
+                            </address>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-4 mt-4 mt-lg-0 mt-xl-0">
+                <div class="rounded-custom border d-block office-address overflow-hidden z-2" style="background: url('assets/images/about/almaty.jpg')no-repeat center center / cover">
+                    <div class="office-content text-center p-4">
+                        <span class="office-overlay"></span>
+                        <div class="office-info">
+                            <h5>Olmaota, <br> Qozogʻiston</h5>
+                            <address>
+                                Abay Turar-joy kompleksi, Gagarin prospekti, 124, 050057, Bostandik tumani, 4-qavat
+                            </address>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-4 mt-4 mt-lg-0 mt-xl-0">
+                <div class="rounded-custom border d-block office-address overflow-hidden z-2" style="background: url('assets/images/about/kg.png')no-repeat center center / cover">
+                    <div class="office-content text-center p-4">
+                        <span class="office-overlay"></span>
+                        <div class="office-info">
+                            <h5>Bishkek, <br> Qirg'iziston </h5>
+                            <address>
+                                Turuzbekova 109/1 Biznes markaz maksimum, tel: +996707880305
+                            </address>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="d-none col-lg-3 col-md-6 mt-4 mt-lg-0 mt-xl-0">
+                <div class="rounded-custom border d-block office-address overflow-hidden z-2" style="background: url('assets/images/about/kiev.jpg')no-repeat center center / cover">
+                    <div class="office-content text-center p-4">
+                        <span class="office-overlay"></span>
+                        <div class="office-info">
+                            <h5> Киев, <br>Украина   </h5>
+                            <address>
+                               Скоро откроется
+                            </address>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="d-none col-lg-3 col-md-6 mt-4 mt-lg-0 mt-xl-0">
+                <div class="rounded-custom border d-block office-address overflow-hidden z-2" style="background: url('assets/images/about/moscow.jpg')no-repeat center center / cover">
+                    <div class="office-content text-center p-4">
+                        <span class="office-overlay"></span>
+                        <div class="office-info">
+                            <h5> Москва, <br> Россия </h5>
+                            <address>
+                                Скоро откроется
+                            </address>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div> <!-- container // -->
+</section>
+<!--our location address end-->
+<hr>
+<!--contact us section start-->
+<section class="contact-us ptb-100 position-relative overflow-hidden">
+    <div class="container">
+        <div class="row justify-content-between">
+            <div class="col-xl-5 col-lg-5 col-md-12">
+                <div class="section-heading" data-aos="fade-up">
+                    <h2> Savollaringiz bormi? </h2>
+                </div>
+                <div class="row justify-content-between pb-5">
+                    <div class="col-sm-6 mb-4 mb-md-0 mb-lg-0" data-aos="fade-up" data-aos-delay="50">
+                        <div class="icon-box d-inline-block rounded-circle bg-primary-soft">
+                            <i class="fas fa-phone fa-2x text-primary"></i>
+                        </div>
+                        <div class="contact-info">
+                            <h5>Telefonlar</h5>
+                            <a href="tel:+998712030305" class="read-more-link text-decoration-none"><i
+                                    class="far fa-phone me-2"></i> +998 71 203-03-05 </a>
+                            <br>
+							<a href="tel:+998712075995" class="read-more-link text-decoration-none"><i
+                                    class="far fa-phone me-2"></i> +998 71 207-59-95 </a>
+                            <br>
+                            <!--<a href="tel:+998998230305" class="read-more-link text-decoration-none"><i
+                                    class="far fa-phone me-2"></i> +998 99 823-03-05 </a>
+                            <br>
+                            <a href="tel:+998994670305" class="read-more-link text-decoration-none"><i
+                                    class="far fa-phone me-2"></i> +998 99 467-03-05 </a>-->
+                        </div>
+                    </div>
+                    <div class="col-sm-6" data-aos="fade-up" data-aos-delay="100">
+                        <div class="icon-box d-inline-block rounded-circle bg-danger-soft">
+                            <i class="fas fa-comment-alt-lines fa-2x text-danger"></i>
+                        </div>
+                        <div class="contact-info">
+                            <h5>Yozing</h5>
+                            <a href="https://t.me/salesdoctor_bot" target="_blank" class="read-more-link text-decoration-none"><i
+                                    class="far fa-comment-alt-dots me-2"></i> Telegram chat </a>
+                            <br>
+                            <a href="mailto:info@salesdoc.uz" class="read-more-link text-decoration-none"><i class="far fa-envelope me-2"></i> info@salesdoc.uz </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-5 col-lg-7 col-md-12">
+                <div class="register-wrap p-5 bg-white shadow rounded-custom position-relative" data-aos="fade-up" data-aos-delay="150">
+                    <form action="#" class="register-form position-relative z-5">
+                        <input type="hidden" name="utm_source" value="">
+						<input type="hidden" name="utm_medium" value="">
+						<input type="hidden" name="utm_campaign" value="">
+						<input type="hidden" name="utm_content" value="">
+						<input type="hidden" name="utm_term" value="">
+                        <h4 class="mb-4 fw-medium"> So'rov qoldiring va biz siz bilan bog'lanamiz </h4>
+                        <div class="row gx-3">
+                            <div class="col-sm-6 mb-3">
+                                <input type="text" name="name" class="form-control" placeholder="Имя" required>
+                            </div>
+                            <div class="col-sm-6 mb-3">
+                                <input type="text" name="company" class="form-control" placeholder="Название компании" required>
+                            </div>
+                            <div class="col-sm-6 mb-3">
+                                <input type="email" name="email" class="form-control" placeholder="Email" required>
+                            </div>
+                            <div class="col-sm-6 mb-3">
+                                <input type="tel" name="phone" class="form-control" placeholder="Телефон" required>
+                            </div>
+                            
+                            <div class="col-12 mb-3">
+                                <textarea name="comment" class="form-control" placeholder="Комментарий" style="height: 120px"></textarea>
+                            </div>
+                            <div class="col-12">
+                                <button type="submit" class="btn btn-success mt-2 w-100">
+                                    Yuborish 
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="bg-success-soft position-absolute bottom-0 h-25 bottom-0 left-0 right-0 z--1 py-5">
+        <div class="bg-circle rounded-circle circle-shape-3 position-absolute bg-success left-5"></div>
+        <div class="bg-circle rounded-circle circle-shape-1 position-absolute bg-success right-5"></div>
+    </div>
+</section>
+<!--contact us section end-->
+
+<!--footer section start-->
+<footer class="footer-section">
+    
+    <!--footer bottom start-->
+    <div class="footer-bottom footer-light py-4">
+        <div class="container">
+            <div class="row justify-content-between align-items-center">
+                <div class="col-md-7 col-lg-7">
+                    <div class="copyright-text">
+                        <p class="mb-lg-0 mb-md-0">&copy; Copyright 2022 Salesdoctor Solutions LLC </p>
+                    </div>
+                </div>
+                
+                <div class="col-md-4 col-lg-4">
+                    <div class="footer-single-col text-start text-lg-end text-md-end">
+                        <ul class="list-unstyled list-inline footer-social-list mb-0">
+                            <li class="list-inline-item">
+                                <a href="https://www.facebook.com/SD.salesdoctor/" target="_blank">
+                                    <i class="fab fa-lg fa-facebook-f"></i></a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="https://instagram.com/sales_doctor?utm_medium=copy_link" target="_blank">
+                                    <i class="fab fa-lg fa-instagram"></i></a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="https://www.linkedin.com/company/ooo-sales-doctor-solutions/" target="_blank"> <i class="fab fa-lg fa-linkedin"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--footer bottom end-->
+</footer>
+<!--footer section end-->
+
+</div> <!-- main wrapper.//end -->
+
+
+
+<!--build:js-->
+<script src="assets/js/vendors/jquery-3.6.0.min.js"></script>
+<script src="assets/js/vendors/bootstrap.bundle.min.js"></script>
+<script src="assets/js/vendors/swiper-bundle.min.js"></script>
+<script src="assets/js/vendors/jquery.magnific-popup.min.js"></script>
+<script src="assets/js/vendors/aos.js"></script>
+<script src="assets/js/app.js"></script>
+<!--endbuild-->
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KCHLSPB" height="0" width="0"
+        style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<script src="https://callback3.onlinepbx.uz/?cb-id=b27a33e5-7dde-4385-8415-d6a58ea688be"></script>
+<script>(function(a,m,o,c,r,m){a[m]={id:"222831",hash:"4cdab2a2a067d935eee5b0a638b6b63b97fa83f8027b11955eebf2ff8a09eac2",locale:"ru",inline:false,setMeta:function(p){this.params=(this.params||[]).concat([p])}};a[o]=a[o]||function(){(a[o].q=a[o].q||[]).push(arguments)};var d=a.document,s=d.createElement('script');s.async=true;s.id=m+'_script';s.src='https://gso.amocrm.ru/js/button.js?1656414765';d.head&&d.head.appendChild(s)}(window,0,'amoSocialButton',0,0,'amo_social_button'));</script>
+</body>
+</html>
